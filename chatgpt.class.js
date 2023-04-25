@@ -1,8 +1,8 @@
 require('dotenv').config()
 
-class ChatGPTClass {
+class xTuringClass {
   queue = []; 
-  optionsGPT = { model: "gpt-3.5-turbo-0301" };
+  optionsXTuring = { model: "llama_lora_int4" };
   openai = undefined;
 
   constructor() {
@@ -13,8 +13,8 @@ class ChatGPTClass {
    * Esta funciona inicializa
    */
   init = async () => {
-    const { ChatGPTAPI } = await import("chatgpt");
-    this.openai = new ChatGPTAPI(
+    const { XTuring } = await import("XTuring");
+    this.openai = new xTuringService(
         {
             apiKey: process.env.OPENAI_API_KEY
         }
